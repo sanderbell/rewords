@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #07bb97;
+    color: #fff;
+    font-family: "Signika Negative";
+    text-align: center;
+}
+
+#plus {
+    background-color: transparent;
+    background-image: url("/static/button.png");
+    background-size: cover;
+    border: none;
+    height: 100px;
+    opacity: 85%;
+    padding: 20px;
+    width: 100px;
+    transition: all 0.2s;
+}
+
+#plus:hover {
+    transform: scale(1.01);
+    opacity: 100%;
+
+}
+
+
+form {
+    display: none;
+}
