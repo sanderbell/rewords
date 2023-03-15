@@ -11,17 +11,34 @@
   </head>
   <body>
     <h1>SpadeSpade!</h1>
-    <p id="cta">Add words to be replaced</p>
-    <section id="initial"></section>
-    <section id="replaced"></section>
-    <button id="plus"></button>
-    <form>
-      <label for="word">Replace:</label>
-      <input type="text" id="word" name="word" />
-      <label for="word">With:</label>
-      <input type="text" id="word" name="word" />
-      <button type="submit" id="save">Add</button>
-      <button type="submit" id="save">Cancel</button>
-    </form>
+    <section id="list">
+      <section id="item"></section>
+    </section>
+    <h3 id="cta">Add some words:</h3>
+    <section id="pairs">
+      <section id="initial-list"></section>
+      <section id="replaced-list"></section>
+    </section>
+    <section id="addition">
+      <form>
+        <input
+          maxlength="30"
+          placeholder="Replace"
+          type="text"
+          id="replace"
+          name="replace"
+          autocomplete="off"
+        />
+        <input
+          placeholder="With"
+          aria-placeholder=""
+          type="text"
+          id="with"
+          name="with"
+          autocomplete="off"
+        />
+        <button type="submit" id="add">Add</button>
+      </form>
+    </section>
   </body>
 </html>

@@ -9,31 +9,44 @@ html {
 }
 
 body {
-    background-color: #07bb97;
+
+    background-color: #149c81;
     color: #fff;
     font-family: "Signika Negative";
     text-align: center;
 }
 
-#plus {
-    background-color: transparent;
-    background-image: url("/static/button.png");
-    background-size: cover;
+
+
+
+#replace,
+#with {
+    outline: none;
+    margin-left: auto;
+    border: black solid 0px;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    display: block;
+    text-align: right;
+}
+
+#replace::placeholder,
+#with::placeholder {
+    padding: 3px;
+    position: relative;
+    text-align: left;
+}
+
+
+
+#add {
+    margin: 5px;
+    padding: 5px;
     border: none;
-    height: 100px;
-    opacity: 85%;
-    padding: 20px;
-    width: 100px;
-    transition: all 0.2s;
-}
-
-#plus:hover {
-    transform: scale(1.01);
-    opacity: 100%;
-
-}
-
-
-form {
-    display: none;
+    border-radius: 3px;
+    color: #363636;
+    background-color: #eef4f3;
 }
