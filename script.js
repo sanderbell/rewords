@@ -1,23 +1,34 @@
-let initial = [];
-let replaceWith = [];
+const userSpecified = {
+  initial: [],
+  replaceWith: [],
+};
 
 document.querySelector('form').addEventListener('submit', function (event) {
   event.preventDefault();
   let replaceInput = document.querySelector('#replace').value;
   let withInput = document.querySelector('#with').value;
-  chrome.storage.sync.set({ replaceInput: replaceInput, withInput: withInput });
+  userSpecified.initial.push(replaceInput);
+  userSpecified.replaceWith.push(withInput);
+  chrome.storage.sync.set({ userSpecified });
+});
+
+let initialList, replaceWithList;
+
+chrome.storage.sync.get(['userSpecified'], function (result) {
+  initialList = result.userSpecified.initial;
+  replaceWithList = result.userSpecified.replaceWith;
 });
 
 const converter = (element) => {
-  if (element.hasChildNodes) {
+  if (element.hasChildNodes()) {
     element.childNodes.forEach(converter);
   }
   if (element.nodeType === Text.TEXT_NODE) {
-    for (let i = 0; i < initial.length; i++) {
-      if (element.textContent.match(initial[i])) {
+    for (let i = 0; i < initialList.length; i++) {
+      if (element.textContent.match(initialList[i])) {
         element.textContent = element.textContent.replace(
-          initial[i],
-          replaceWith[i]
+          initialList[i],
+          replaceWithList[i]
         );
       }
     }

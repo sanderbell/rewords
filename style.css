@@ -9,12 +9,23 @@ html {
 }
 
 body {
-    background-color: #3a7260;
+    width: 220px;
+    background-color: #41b699;
     color: #fff;
-    font-family: "Signika Negative";
-    padding-top: 20px;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    padding: 20px;
     text-align: center;
-    transform: scale(1.3);
+
+}
+
+#list {
+    font-size: 1.2em;
+}
+
+#cta {
+    font-size: 1.1em;
+    opacity: 80%;
+
 }
 
 #replace,
@@ -27,22 +38,23 @@ body {
     margin-right: auto;
     margin-top: 5px;
     outline: none;
-    padding: 8px;
+    padding: 5px;
     text-align: right;
 }
 
 #replace::placeholder,
 #with::placeholder {
-    padding: 3px;
-    position: relative;
+    font-size: 0.94em;
+    opacity: 60%;
+    padding: 2px;
     text-align: left;
 }
 
 #add {
-    background-color: #cdcdcd;
-    border-radius: 3px;
+    background-color: #ffffff;
+    border-radius: 5px;
     border: none;
-    color: #000000;
-    margin: 4px;
-    padding: 5px;
+    color: #4f4f4f;
+    margin: 6px;
+    padding: 6px;
 }

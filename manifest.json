@@ -1,1 +1,19 @@
-{ "permissions": ["storage"] }
+{
+  "manifest_version": 3,
+  "name": "SpadeSpade!",
+  "permissions": ["storage"],
+  "version": "0.1",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "description": "A spade is spade!"
+}
