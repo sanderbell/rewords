@@ -1,4 +1,4 @@
-let initial, replaceWith, initialList, replaceWithList, replaceInput, withInput;
+let initial, replaceWith, replaceInput, withInput;
 
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
@@ -10,9 +10,6 @@ chrome.storage.sync.get(null, function (items) {
     initial = [];
     replaceWith = [];
   }
-  setTimeout(() => {
-    console.log(initial, replaceWith);
-  }, 1000);
 });
 
 document
@@ -23,7 +20,6 @@ document
     withInput = document.querySelector('#with').value;
     initial.push(replaceInput);
     replaceWith.push(withInput);
-
     chrome.storage.sync.set({ initial: initial });
     chrome.storage.sync.set({ replaceWith: replaceWith });
     console.log(
@@ -31,35 +27,22 @@ document
     );
   });
 
-// chrome.storage.sync.get('userSpecified', function (result) {
-//   if (initial.length > 0) {
-//     initialList = result.initial;
-//     replaceWithList = result.replaceWith;
-//     console.log(
-//       `initialList and replaceWithList are updated: ${initialList} and ${replaceWithList}`
-//     );
-//   }
-// });
-
 const converter = (element) => {
   if (element.hasChildNodes()) {
     element.childNodes.forEach(converter);
   }
-  if ((element.nodeType === Text.TEXT_NODE) & initialList) {
-    for (let i = 0; i < initialList.length; i++) {
-      if (element.textContent.match(initialList[i])) {
+  if ((element.nodeType === Text.TEXT_NODE) & (initial.length > 0)) {
+    for (let i = 0; i < initial.length; i++) {
+      if (element.textContent.match(initial[i])) {
         element.textContent = element.textContent.replace(
-          initialList[i],
-          replaceWithList[i]
+          initial[i],
+          replaceWith[i]
         );
       }
     }
   }
 };
 
-converter(document.head);
-converter(document.body);
-console.log('converter worked');
 // Applies converter() to every newly-emerged DOM-element
 const refresher = new MutationObserver((mutationsList) => {
   for (let mutation of mutationsList) {
@@ -73,5 +56,9 @@ const refresher = new MutationObserver((mutationsList) => {
   }
 });
 
-refresher.observe(document.body, { childList: true, subtree: true });
-console.log('refresher worked');
+setTimeout(() => {
+  converter(document.head);
+  converter(document.body);
+  refresher.observe(document.body, { childList: true, subtree: true });
+  console.log(initial);
+}, 100);
