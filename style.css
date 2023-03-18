@@ -9,12 +9,13 @@ html {
 }
 
 body {
-    width: 220px;
-    background-color: #41b699;
+    width: 250px;
+    background-color: #5ba7a8;
     color: #fff;
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
     padding: 20px;
     text-align: center;
+    font-size: 1.05em;
 
 }
 
@@ -38,14 +39,13 @@ body {
     margin-right: auto;
     margin-top: 5px;
     outline: none;
-    padding: 5px;
+    padding: 7px;
     text-align: right;
 }
 
 #replace::placeholder,
 #with::placeholder {
-    font-size: 0.94em;
-    opacity: 60%;
+    opacity: 70%;
     padding: 2px;
     text-align: left;
 }
