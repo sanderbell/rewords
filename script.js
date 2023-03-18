@@ -1,31 +1,45 @@
-const userSpecified = {
-  initial: [],
-  replaceWith: [],
-};
+let initial, replaceWith, initialList, replaceWithList, replaceInput, withInput;
 
-console.log(`userSpecified declared`);
+chrome.storage.sync.get(null, function (items) {
+  allItems = Object.entries(items);
 
-let theForm, initialList, replaceWithList, replaceInput, withInput;
-
-document.getElementById('the-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  replaceInput = document.querySelector('#replace').value;
-  withInput = document.querySelector('#with').value;
-  userSpecified.initial.push(replaceInput);
-  userSpecified.replaceWith.push(withInput);
-  chrome.storage.sync.set({ userSpecified });
-  console.log(`userSpecified is updated! Words being replaced: ${userSpecified.initial}. Substitutions:  ${userSpecified.replaceWith}`);
-});
-
-chrome.storage.sync.get('userSpecified', function (result) {
-  if (userSpecified.initial & userSpecified.replaceWith) {
-    initialList = result.userSpecified.initial;
-    replaceWithList = result.userSpecified.replaceWith;
-    console.log(
-      `initialList and replaceWithList are updated: ${initialList} and ${replaceWithList}`
-    );
+  if (allItems.length > 0) {
+    initial = allItems[0][1];
+    replaceWith = allItems[1][1];
+  } else {
+    initial = [];
+    replaceWith = [];
   }
+  setTimeout(() => {
+    console.log(initial, replaceWith);
+  }, 1000);
 });
+
+document
+  .getElementById('the-form')
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
+    replaceInput = document.querySelector('#replace').value;
+    withInput = document.querySelector('#with').value;
+    initial.push(replaceInput);
+    replaceWith.push(withInput);
+
+    chrome.storage.sync.set({ initial: initial });
+    chrome.storage.sync.set({ replaceWith: replaceWith });
+    console.log(
+      `userSpecified is updated! Words being replaced: ${initial}. Substitutions:  ${replaceWith}`
+    );
+  });
+
+// chrome.storage.sync.get('userSpecified', function (result) {
+//   if (initial.length > 0) {
+//     initialList = result.initial;
+//     replaceWithList = result.replaceWith;
+//     console.log(
+//       `initialList and replaceWithList are updated: ${initialList} and ${replaceWithList}`
+//     );
+//   }
+// });
 
 const converter = (element) => {
   if (element.hasChildNodes()) {
@@ -46,7 +60,6 @@ const converter = (element) => {
 converter(document.head);
 converter(document.body);
 console.log('converter worked');
-
 // Applies converter() to every newly-emerged DOM-element
 const refresher = new MutationObserver((mutationsList) => {
   for (let mutation of mutationsList) {
