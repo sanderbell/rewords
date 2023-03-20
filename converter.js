@@ -40,4 +40,4 @@ setTimeout(() => {
   converter(document.head);
   converter(document.body);
   refresher.observe(document.body, { childList: true, subtree: true });
-}, 150);
+}, 600);

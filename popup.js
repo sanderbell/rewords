@@ -36,12 +36,11 @@ chrome.storage.sync.get(null, function (items) {
 setTimeout(() => {
   document
     .getElementById('the-form')
-    .addEventListener('submit', function (event) {
-      // event.preventDefault();
+    .addEventListener('submit', function () {
       replaceInput = document.querySelector('#replace').value;
       withInput = document.querySelector('#with').value;
       initial.push(replaceInput);
       replaceWith.push(withInput);
       wordsSync();
     });
-}, 100);
+}, 500);
