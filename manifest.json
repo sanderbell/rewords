@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>", "http://*/*", "https://*/*"],
-      "js": ["script.js"]
+      "js": ["converter.js"]
     }
   ],
   "icons": {
