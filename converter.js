@@ -14,7 +14,7 @@ const converter = (element) => {
   }
   if ((element.nodeType === Text.TEXT_NODE) & (initial.length > 0)) {
     for (let i = 0; i < initial.length; i++) {
-      rgx = new RegExp(`${initial[i]}`, 'gmi');
+      rgx = new RegExp(`${initial[i]}`);
       if (element.textContent.match(rgx)) {
         element.textContent = element.textContent.replace(
           initial[i],

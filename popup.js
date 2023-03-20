@@ -6,6 +6,12 @@ let allItems,
   replaceInput,
   withInput;
 
+//TODO: Check whether initial input already exists
+//TODO: Do not accept empty
+//TODO: Set limits
+//TODO: Add into the list
+//TODO: Deletion
+
 // One function to sync words
 function wordsSync() {
   chrome.storage.sync.set({
