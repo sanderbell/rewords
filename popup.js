@@ -24,23 +24,22 @@ chrome.storage.sync.get(null, function (items) {
     initial = [];
     replaceWith = [];
     wordsSync();
-    console.log('Has been launched for the first time');
+    console.log('Launched for the first time');
   } else {
     initial = allItems[0][1];
     replaceWith = allItems[1][1];
     wordsSync();
-    console.log('Has been launched NOT for the first time');
+    console.log('Launched NOT for the first time');
   }
 });
 
+//TODO: Convert to async to wait instead of setTimeout
 setTimeout(() => {
-  document
-    .getElementById('the-form')
-    .addEventListener('submit', function () {
-      replaceInput = document.querySelector('#replace').value;
-      withInput = document.querySelector('#with').value;
-      initial.push(replaceInput);
-      replaceWith.push(withInput);
-      wordsSync();
-    });
+  document.getElementById('the-form').addEventListener('submit', function () {
+    replaceInput = document.querySelector('#replace').value.trim();
+    withInput = document.querySelector('#with').value.trim();
+    initial.push(replaceInput);
+    replaceWith.push(withInput);
+    wordsSync();
+  });
 }, 500);

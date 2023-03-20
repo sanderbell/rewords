@@ -2,10 +2,12 @@ let allItems, initial, replaceWith;
 
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
+  //TODO: Get these by name
   initial = allItems[0][1];
   replaceWith = allItems[1][1];
 });
 
+// Recursively checks every HTML element and replaces words
 const converter = (element) => {
   if (element.hasChildNodes()) {
     element.childNodes.forEach(converter);
@@ -37,7 +39,6 @@ const refresher = new MutationObserver((mutationsList) => {
 });
 
 setTimeout(() => {
-  converter(document.head);
-  converter(document.body);
+  converter(document);
   refresher.observe(document.body, { childList: true, subtree: true });
 }, 600);
