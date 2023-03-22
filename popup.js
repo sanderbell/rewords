@@ -28,12 +28,10 @@ chrome.storage.sync.get(null, function (items) {
     initial = [];
     replaceWith = [];
     wordsSync();
-    console.log('Launched for the first time'); //TODO:
   } else {
     initial = allItems[0][1];
     replaceWith = allItems[1][1];
     wordsSync();
-    console.log('Launched NOT for the first time');
   }
 });
 //TODO: Convert to async to wait instead of setTimeout
@@ -45,6 +43,9 @@ setTimeout(() => {
 
     //TODO: Check whether initial input already exists
     if (initial.includes(replaceInput)) {
+      const tooltiptext = document.getElementById('tooltiptext');
+      tooltiptext.style.visibility = 'visible';
+      tooltiptext.style.opacity = '80%';
     } else {
       initial.push(replaceInput);
       replaceWith.push(withInput);
