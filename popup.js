@@ -13,7 +13,6 @@ function wordsSync() {
   });
 }
 
-//TODO: Do not accept empty
 //TODO: Set limits
 //TODO: Add into the list
 //TODO: Deletion
@@ -34,22 +33,25 @@ chrome.storage.sync.get(null, function (items) {
     wordsSync();
   }
 });
-//TODO: Convert to async to wait instead of setTimeout
+//TODO: Convert to async to wait instead of setTimeout?
 setTimeout(() => {
   document.getElementById('the-form').addEventListener('submit', function (e) {
     e.preventDefault();
     replaceInput = document.querySelector('#replace').value.trim();
     withInput = document.querySelector('#with').value.trim();
 
-    //TODO: Check whether initial input already exists
+    const tooltiptext = document.getElementById('tooltiptext');
+
     if (initial.includes(replaceInput)) {
-      const tooltiptext = document.getElementById('tooltiptext');
       tooltiptext.style.visibility = 'visible';
-      tooltiptext.style.opacity = '80%';
+      tooltiptext.style.opacity = '75%';
     } else {
       initial.push(replaceInput);
       replaceWith.push(withInput);
+      tooltiptext.style.opacity = '0%';
       wordsSync();
+      document.querySelector('#replace').value = '';
+      document.querySelector('#with').value = '';
     }
   });
 }, 500);

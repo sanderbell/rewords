@@ -34,17 +34,17 @@ body {
 }
 
 #tooltiptext {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(223, 223, 223);
     border-radius: 6px;
-    color: #292929;
-    font-size: 0.8em;
-    margin-left: -70px;
+    color: #3e3e3e;
+    font-size: 0.71em;
+    margin-left: -85px;
     margin-top: -23px;
     opacity: 0%;
     padding: 3px 0;
     position: absolute;
     text-align: center;
-    width: 140px;
+    width: 170px;
     z-index: 1;
     transition: opacity 1.14s;
 }
