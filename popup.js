@@ -35,23 +35,36 @@ chrome.storage.sync.get(null, function (items) {
 });
 //TODO: Convert to async to wait instead of setTimeout?
 setTimeout(() => {
-  document.getElementById('the-form').addEventListener('submit', function (e) {
+  document.querySelector('#the-form').addEventListener('submit', function (e) {
     e.preventDefault();
     replaceInput = document.querySelector('#replace').value.trim();
     withInput = document.querySelector('#with').value.trim();
 
-    const tooltiptext = document.getElementById('tooltiptext');
+    const alreadyExists = document.querySelector('#already-exists');
+    const empty = document.querySelector('#empty');
+    const tooLong = document.querySelector('#too-long');
 
     if (initial.includes(replaceInput)) {
-      tooltiptext.style.visibility = 'visible';
-      tooltiptext.style.opacity = '75%';
+      alreadyExists.style.opacity = '85%';
+      empty.style.opacity = '0%';
+      tooLong.style.opacity = '0%';
+    } else if (replaceInput == '') {
+      empty.style.opacity = '85%';
+      alreadyExists.style.opacity = '0%';
+      tooLong.style.opacity = '0%';
+    } else if (replaceInput.length > 30) {
+      tooLong.style.opacity = '85%';
+      empty.style.opacity = '0%';
+      alreadyExists.style.opacity = '0%';
     } else {
       initial.push(replaceInput);
       replaceWith.push(withInput);
-      tooltiptext.style.opacity = '0%';
-      wordsSync();
+      alreadyExists.style.opacity = '0%';
+      empty.style.opacity = '0%';
+      tooLong.style.opacity = '0%';
       document.querySelector('#replace').value = '';
       document.querySelector('#with').value = '';
+      wordsSync();
     }
   });
 }, 500);

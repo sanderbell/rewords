@@ -24,8 +24,20 @@
     </section>
     <section id="addition">
       <form id="the-form">
-        <section id="tooltip">
-          <span id="tooltiptext">You already added this before 🥹</span>
+        <section class="tooltip">
+          <span class="tooltiptext" id="already-exists"
+            >😬 Already added this before
+          </span>
+        </section>
+        <section class="tooltip">
+          <span class="tooltiptext" id="too-long">
+            🤠 Up to 30 characters, please</span
+          >
+        </section>
+        <section class="tooltip">
+          <span class="tooltiptext" id="empty"
+            >😶‍🌫️ Please type something</span
+          >
         </section>
         <input
           maxlength="50"
@@ -34,16 +46,13 @@
           id="replace"
           name="replace"
           autocomplete="off"
-          required
         />
         <input
           placeholder="With"
-          aria-placeholder=""
           type="text"
           id="with"
           name="with"
           autocomplete="off"
-          required
         />
         <button type="submit" id="add">Add</button>
       </form>
