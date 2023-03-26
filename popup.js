@@ -43,6 +43,7 @@ chrome.storage.sync.get(null, function (items) {
     replaceWith = allItems[1][1];
 
     wordsSync();
+    addTouserList(initial, replaceWith, 'pair');
   }
 });
 
