@@ -25,7 +25,6 @@ function addTouserList(init, replW, htmlEl) {
   element.innerHTML = lines.join('<br>');
 }
 
-//TODO: Add into the list
 //TODO: Deletion
 
 // Creating entries in the storage on the first run

@@ -1,4 +1,4 @@
-let allItems, initial, replaceWith;
+let allItems, initial, replaceWith, rgx;
 
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
