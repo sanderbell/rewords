@@ -13,11 +13,11 @@ function wordsSync() {
   });
 }
 
-function addTouserList(init, replW, htmlEl) {
+function addToUserList(init, replW, htmlEl) {
   let lines = [];
 
   for (let i = 0; i < init.length; i++) {
-    let str = `${init[i]} ⟶ ${replW[i]}`;
+    let str = `<strike><i><font color="#d7d7d7">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b>`;
     lines.push(str);
   }
 
@@ -26,7 +26,7 @@ function addTouserList(init, replW, htmlEl) {
 }
 
 //TODO: Deletion
-
+//TODO: Check if one word is part another
 // Creating entries in the storage on the first run
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
@@ -42,7 +42,7 @@ chrome.storage.sync.get(null, function (items) {
     replaceWith = allItems[1][1];
 
     wordsSync();
-    addTouserList(initial, replaceWith, 'pair');
+    addToUserList(initial, replaceWith, 'pair');
   }
 });
 
@@ -81,8 +81,8 @@ setTimeout(() => {
       tooLong.style.opacity = '0%';
       document.querySelector('#replace').value = '';
       document.querySelector('#with').value = '';
-      addTouserList(initial, replaceWith, 'pair');
+      addToUserList(initial, replaceWith, 'pair');
       wordsSync();
     }
   });
-}, 500);
+}, 400);

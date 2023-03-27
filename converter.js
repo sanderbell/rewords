@@ -41,4 +41,4 @@ const refresher = new MutationObserver((mutationsList) => {
 setTimeout(() => {
   converter(document);
   refresher.observe(document.body, { childList: true, subtree: true });
-}, 600);
+}, 450);
