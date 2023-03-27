@@ -26,7 +26,7 @@ function addToUserList(init, replW, htmlEl) {
 }
 
 //TODO: Deletion
-//TODO: Check if one word is part another
+//TODO: Check if one word is part of another
 // Creating entries in the storage on the first run
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);

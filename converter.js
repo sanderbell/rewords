@@ -1,10 +1,8 @@
-let allItems, initial, replaceWith, rgx;
+let initial, replaceWith, rgx;
 
 chrome.storage.sync.get(null, function (items) {
-  allItems = Object.entries(items);
-  //TODO: Get these by name
-  initial = allItems[0][1];
-  replaceWith = allItems[1][1];
+  initial = items.initial;
+  replaceWith = items.replaceWith;
 });
 
 // Recursively checks every HTML element and replaces words
