@@ -103,4 +103,4 @@ setTimeout(() => {
     chrome.storage.sync.clear();
     list = document.getElementById('pair').innerHTML = '';
   });
-}, 500);
+}, 400);
