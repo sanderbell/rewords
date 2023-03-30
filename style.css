@@ -9,22 +9,35 @@ html {
 }
 
 body {
-    background-color: #58a4cd;
+    background-color: #36ade9;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.05em;
+    font-size: 1.09em;
     padding: 20px;
     text-align: center;
     width: 250px;
 }
 
-#list {
-    font-size: 1.2em;
-}
-
 #cta {
     font-size: 1.1em;
     opacity: 90%;
+}
+
+.remove {
+    padding: 2px;
+    font-size: 1.03em;
+    background: none;
+    color: #ffedf9;
+    border: none;
+    opacity: 0.4;
+    transition: all 0.4s;
+}
+
+.remove:hover {
+    opacity: 1;
+    cursor: pointer;
+    color: #d4d4d4;
+    transform: rotate(-90deg);
 }
 
 .tooltip {
@@ -100,10 +113,4 @@ body {
 #add:hover {
     background-color: #ffffff;
     transform: scale(1.02);
-}
-
-
-#close {
-    color: #e086c0;
-    transform: rotate(15deg);
 }

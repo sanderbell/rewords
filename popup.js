@@ -17,7 +17,7 @@ function addToUserList(init, replW, htmlEl) {
   let lines = [];
 
   for (let i = 0; i < init.length; i++) {
-    let str = `<strike><i><font color="#d5dce0">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b>`;
+    let str = `<strike><i><font color="#d5dce0">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b> <button name="Remove this pair" class="remove">×</button>`;
     lines.push(str);
   }
 
