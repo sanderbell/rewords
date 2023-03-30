@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "SpadeSpade!",
   "permissions": ["storage"],
-  "version": "0.8",
+  "version": "0.9",
   "action": {
     "default_popup": "popup.html"
   },

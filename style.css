@@ -9,14 +9,13 @@ html {
 }
 
 body {
-    background-color: #4e8cae;
+    background-color: #58a4cd;
     color: #fff;
     font-family: 'Cabin', sans-serif;
     font-size: 1.05em;
     padding: 20px;
     text-align: center;
     width: 250px;
-
 }
 
 #list {
@@ -36,7 +35,8 @@ body {
 
 #already-exists,
 #empty,
-#too-long {
+#too-long,
+#inReplacements {
     background-color: rgb(223, 223, 223);
     border-radius: 6px;
     color: #3e3e3e;
@@ -47,9 +47,10 @@ body {
     padding: 3px 0;
     position: absolute;
     text-align: center;
-    width: 180px;
-    /* z-index: 1; */
     transition: opacity 1s;
+    width: 180px;
+    z-index: 1;
+
 }
 
 .tooltip .tooltiptext::after {
@@ -67,17 +68,17 @@ body {
 
 #replace,
 #with {
-    border-radius: 5px;
+    border-radius: 4px;
     border: black solid 0px;
+    /* box-shadow: 0px 0px 100px 3px rgb(255, 255, 255); */
     display: block;
     margin-bottom: 12px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
     outline: none;
-    padding: 8px;
+    padding: 7px;
     text-align: right;
-    box-shadow: 0px 0px 100px 3px rgb(255, 255, 255);
 }
 
 #replace::placeholder,
@@ -103,6 +104,6 @@ body {
 
 
 #close {
-    transform: rotate(15deg);
     color: #e086c0;
+    transform: rotate(15deg);
 }

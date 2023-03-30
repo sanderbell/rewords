@@ -17,7 +17,7 @@ function addToUserList(init, replW, htmlEl) {
   let lines = [];
 
   for (let i = 0; i < init.length; i++) {
-    let str = `<strike><i><font color="#d7d7d7">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b>`;
+    let str = `<strike><i><font color="#d5dce0">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b>`;
     lines.push(str);
   }
 
@@ -25,8 +25,8 @@ function addToUserList(init, replW, htmlEl) {
   element.innerHTML = lines.join('<br>');
 }
 
-//TODO: Deletion
-//TODO: Check if one word is part of another
+//TODO: Deletion with confirmation
+
 // Creating entries in the storage on the first run
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
@@ -58,18 +58,27 @@ setTimeout(() => {
     const tooLong = document.querySelector('#too-long');
 
     if (initial.includes(replaceInput)) {
-      // if user input already exists
+      // if already exists
       alreadyExists.style.opacity = '85%';
       empty.style.opacity = '0%';
       tooLong.style.opacity = '0%';
+      inReplacements.style.opacity = '0';
     } else if (replaceInput == '') {
-      // if user input is empty
+      // if empty
       empty.style.opacity = '85%';
       alreadyExists.style.opacity = '0%';
       tooLong.style.opacity = '0%';
-    } else if (replaceInput.length > 30) {
-      // if user input is longer than 30 characters
+      inReplacements.style.opacity = '0';
+    } else if (replaceInput.length > 20) {
+      // if > 20 chars
       tooLong.style.opacity = '85%';
+      empty.style.opacity = '0%';
+      alreadyExists.style.opacity = '0%';
+      inReplacements.style.opacity = '0%';
+    } else if (replaceWith.includes(replaceInput)) {
+      // if in replaceWith
+      inReplacements.style.opacity = '85%';
+      tooLong.style.opacity = '0%';
       empty.style.opacity = '0%';
       alreadyExists.style.opacity = '0%';
     } else {
@@ -79,10 +88,12 @@ setTimeout(() => {
       alreadyExists.style.opacity = '0%';
       empty.style.opacity = '0%';
       tooLong.style.opacity = '0%';
+      inReplacements.style.opacity = '0%';
       document.querySelector('#replace').value = '';
       document.querySelector('#with').value = '';
       addToUserList(initial, replaceWith, 'pair');
       wordsSync();
     }
+    //TODO: Check if one word is part of another
   });
 }, 400);
