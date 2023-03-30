@@ -12,10 +12,14 @@ body {
     background-color: #36ade9;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.09em;
+    font-size: 1.2em;
     padding: 20px;
     text-align: center;
     width: 250px;
+}
+
+#pair {
+    font-size: 0.85em;
 }
 
 #cta {
@@ -27,7 +31,7 @@ body {
     padding: 2px;
     font-size: 1.03em;
     background: none;
-    color: #ffedf9;
+    color: #fff;
     border: none;
     opacity: 0.4;
     transition: all 0.4s;
@@ -36,7 +40,6 @@ body {
 .remove:hover {
     opacity: 1;
     cursor: pointer;
-    color: #d4d4d4;
     transform: rotate(-90deg);
 }
 
@@ -53,7 +56,8 @@ body {
     background-color: rgb(223, 223, 223);
     border-radius: 6px;
     color: #3e3e3e;
-    font-size: 0.75em;
+    /* TODO: Tooltip width must depent on text lenght */
+    font-size: 0.6em; 
     margin-left: -90px;
     margin-top: -23px;
     opacity: 0%;
@@ -83,7 +87,7 @@ body {
 #with {
     border-radius: 4px;
     border: black solid 0px;
-    /* box-shadow: 0px 0px 100px 3px rgb(255, 255, 255); */
+    box-shadow: 0px 0px 120px 2px rgb(255, 255, 255);
     display: block;
     margin-bottom: 12px;
     margin-left: auto;
@@ -102,15 +106,31 @@ body {
 }
 
 #add {
-    background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 6px;
     border: none;
     color: #4f4f4f;
     margin: 6px;
     padding: 6px;
+    transition: all 0.4s;
 }
 
 #add:hover {
-    background-color: #ffffff;
-    transform: scale(1.02);
+    transform: scale(1.05);
+}
+
+#clear-all {
+    border: none;
+    margin-top: 10px;
+    background: none;
+    font-size: 0.7em;
+    color: #fff;
+    opacity: 0.4;
+    transition: all 0.4s;
+}
+
+
+
+#clear-all:hover {
+    opacity: 0.6;
+    transform: scale(1.05);
 }

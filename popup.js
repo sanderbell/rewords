@@ -97,3 +97,10 @@ setTimeout(() => {
     //TODO: Check if one word is part of another
   });
 }, 400);
+
+setTimeout(() => {
+  document.querySelector('#clear-all').addEventListener('click', function (e) {
+    chrome.storage.sync.clear();
+    list = document.getElementById('pair').innerHTML = '';
+  });
+}, 500);
