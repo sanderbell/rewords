@@ -100,10 +100,11 @@ setTimeout(() => {
 }, 400);
 
 setTimeout(() => {
-  document.querySelector('#clear-all').addEventListener('click', function (e) {
-    e.preventDefault();
-    list = document.getElementById('pair').innerHTML = '';
-    chrome.storage.sync.clear();
-    location.reload();
+  document.querySelector('#clear-all').addEventListener('click', function () {
+    if (confirm('Do you want to delete all entries?')) {
+      document.getElementById('pair').innerHTML = '';
+      chrome.storage.sync.clear();
+      location.reload();
+    }
   });
 }, 500);
