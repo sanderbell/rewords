@@ -83,6 +83,7 @@ setTimeout(() => {
       alreadyExists.style.opacity = '0%';
     } else {
       // if everything is OK
+
       initial.push(replaceInput);
       replaceWith.push(withInput);
       alreadyExists.style.opacity = '0%';
@@ -100,7 +101,9 @@ setTimeout(() => {
 
 setTimeout(() => {
   document.querySelector('#clear-all').addEventListener('click', function (e) {
-    chrome.storage.sync.clear();
+    e.preventDefault();
     list = document.getElementById('pair').innerHTML = '';
+    chrome.storage.sync.clear();
+    location.reload();
   });
-}, 400);
+}, 500);
