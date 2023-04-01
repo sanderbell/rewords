@@ -24,7 +24,6 @@ function addToUserList(init, replW, htmlEl) {
   let element = document.getElementById(htmlEl);
   element.innerHTML = lines.join('<br>');
 }
-
 //TODO: Deletion with confirmation
 
 // Creating entries in the storage on the first run
@@ -107,4 +106,19 @@ setTimeout(() => {
       location.reload();
     }
   });
+}, 500);
+
+setTimeout(() => {
+  allRemoveButtons = document.querySelectorAll('.remove');
+  for (let i = 0; i < allRemoveButtons.length; i++) {
+    const removeButton = allRemoveButtons[i];
+    removeButton.addEventListener('click', function () {
+      if (confirm('Do you want to delete this entry?')) {
+        initial = initial.filter((e) => e !== initial[i]);
+        replaceWith = replaceWith.filter((e) => e !== replaceWith[i]);
+        wordsSync();
+        location.reload();
+      }
+    });
+  }
 }, 500);
