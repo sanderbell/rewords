@@ -9,18 +9,26 @@ html {
 }
 
 body {
-    background-color: #479eca;
+    background-color: #788cee;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.3em;
     padding: 10px;
     text-align: center;
     width: 250px;
+
+    /* 
+     */
 }
 
 h1 {
-    font-size: 1.2em;
-    margin-bottom: auto;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#words {
+    color: #e8d5ff;
 }
 
 #pair {
@@ -28,13 +36,14 @@ h1 {
 }
 
 #cta {
-    opacity: 0.7;
+    font-size: 0.8em;
+    opacity: 0.5;
 }
 
 .remove {
     background: none;
     border: none;
-    color: #fff;
+    color: #e8d5ff;
     font-size: 1.03em;
     opacity: 0.4;
     padding: 2px;
@@ -57,11 +66,11 @@ h1 {
 #empty,
 #too-long,
 #inReplacements {
-    /*TODO: Tooltip width must depent on text lenght */
-    background-color: rgb(223, 223, 223);
+    /* TODO: Tooltip width must depent on text lenght */
+    background-color: #ededed;
     border-radius: 6px;
     color: #3e3e3e;
-    font-size: 0.6em;
+    font-size: 0.65em;
     margin-left: -90px;
     margin-top: -23px;
     opacity: 0%;
@@ -71,10 +80,11 @@ h1 {
     transition: opacity 1s;
     width: 180px;
     z-index: 1;
+
 }
 
 .tooltip .tooltiptext::after {
-    border-color: rgb(235, 235, 235) transparent transparent transparent;
+    border-color: #ededed transparent transparent transparent;
     border-style: solid;
     border-width: 5px;
     content: "";
@@ -90,7 +100,7 @@ h1 {
 #with {
     border-radius: 5px;
     border: black solid 0px;
-    box-shadow: 0px 0px 120px 2px rgb(255, 255, 255);
+    box-shadow: 0px 0px 120px 2px #e8d5ff;
     display: block;
     margin-bottom: 12px;
     margin-left: auto;
@@ -124,7 +134,7 @@ h1 {
 #clear-all {
     background: none;
     border: none;
-    color: #fff;
+    color: #e8d5ff;
     font-size: 0.7em;
     margin-top: 10px;
     opacity: 0.4;

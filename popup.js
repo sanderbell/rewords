@@ -17,15 +17,13 @@ function addToUserList(init, replW, htmlEl) {
   let lines = [];
 
   for (let i = 0; i < init.length; i++) {
-    let str = `<strike><i><font color="#d5dce0">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b> <button name="Remove this pair" class="remove">×</button>`;
+    let str = `<strike><i><font color="#e8d5ff">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b> <button name="Remove this pair" class="remove">×</button>`;
     lines.push(str);
   }
 
   let element = document.getElementById(htmlEl);
   element.innerHTML = lines.join('<br>');
 }
-//TODO: Deletion with confirmation
-
 // Creating entries in the storage on the first run
 chrome.storage.sync.get(null, function (items) {
   allItems = Object.entries(items);
@@ -93,6 +91,7 @@ setTimeout(() => {
       document.querySelector('#with').value = '';
       addToUserList(initial, replaceWith, 'pair');
       wordsSync();
+      location.reload();
     }
     //TODO: Check if one word is part of another
   });

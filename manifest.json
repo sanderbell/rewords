@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "SpadeSpade!",
+  "name": "Rewords — replacing words on webpages",
   "permissions": ["storage"],
-  "version": "0.92",
+  "version": "1.0",
   "action": {
     "default_popup": "popup.html"
   },
@@ -15,5 +15,5 @@
   "icons": {
     "128": "icon-128.png"
   },
-  "description": "A spade is spade!"
+  "description": "Easily replace one word with another on any webpage you're viewing"
 }
