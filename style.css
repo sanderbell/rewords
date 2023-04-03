@@ -12,13 +12,10 @@ body {
     background-color: #788cee;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.35em;
     padding: 10px;
     text-align: center;
     width: 250px;
-
-    /* 
-     */
 }
 
 h1 {
@@ -37,7 +34,8 @@ h1 {
 
 #cta {
     font-size: 0.8em;
-    opacity: 0.5;
+    opacity: 0.4;
+    color: #e8d5ff;
 }
 
 .remove {
@@ -47,13 +45,13 @@ h1 {
     font-size: 1.03em;
     opacity: 0.4;
     padding: 2px;
-    transition: all 0.4s;
+    transition: all 0.5s;
 }
 
 .remove:hover {
     cursor: pointer;
     opacity: 1;
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
 }
 
 .tooltip {
@@ -77,7 +75,7 @@ h1 {
     padding: 3px 0;
     position: absolute;
     text-align: center;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     width: 180px;
     z-index: 1;
 
@@ -93,7 +91,7 @@ h1 {
     opacity: 90%;
     position: absolute;
     top: 100%;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 
 #replace,
@@ -138,10 +136,10 @@ h1 {
     font-size: 0.7em;
     margin-top: 10px;
     opacity: 0.4;
-    transition: all 0.4s;
+    transition: all 0.2s;
 }
 
 #clear-all:hover {
-    opacity: 0.6;
-    transform: scale(1.05);
+    opacity: 0.7;
+    transform: scale(1.03);
 }
