@@ -1,6 +1,7 @@
 let initial, replaceWith, rgx;
 
-chrome.storage.sync.get(null, function (items) {
+// Get initial and replaceWith arrays from Chrome storage
+chrome.storage.sync.get(['initial', 'replaceWith'], function (items) {
   initial = items.initial;
   replaceWith = items.replaceWith;
 });
@@ -10,7 +11,7 @@ const converter = (element) => {
   if (element.hasChildNodes()) {
     element.childNodes.forEach(converter);
   }
-  if ((element.nodeType === Text.TEXT_NODE) & (initial.length > 0)) {
+  if (element.nodeType === Text.TEXT_NODE && initial.length > 0) {
     for (let i = 0; i < initial.length; i++) {
       rgx = new RegExp(`${initial[i]}`);
       if (element.textContent.match(rgx)) {
@@ -36,6 +37,7 @@ const refresher = new MutationObserver((mutationsList) => {
   }
 });
 
+// Wait for 450ms before running converter and refresher
 setTimeout(() => {
   converter(document);
   refresher.observe(document.body, { childList: true, subtree: true });

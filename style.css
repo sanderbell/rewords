@@ -12,7 +12,7 @@ body {
     background-color: #2e3d84;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     padding: 10px;
     text-align: center;
     width: 290px;
@@ -29,7 +29,7 @@ h1 {
 }
 
 #pair {
-    font-size: 0.85em;
+    font-size: 1rem;
 }
 
 #cta {
@@ -42,16 +42,16 @@ h1 {
     background: none;
     border: none;
     color: #e8d5ff;
-    font-size: 1.03em;
+    font-size: 1.05em;
     opacity: 0.4;
-    padding: 2px;
-    transition: all 0.5s;
+    padding: 3px;
+    transition: all 0.6s;
 }
 
 .remove:hover {
     cursor: pointer;
     opacity: 1;
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) scale(1.04);
 }
 
 .tooltip {
@@ -63,26 +63,27 @@ h1 {
 #already-exists,
 #empty,
 #too-long,
-#inReplacements {
+#in-replacements,
+#part-of-replacement {
     /* TODO: Tooltip width must depent on text lenght */
-    background-color: #ededed;
+    background-color: #e8d5ff;
     border-radius: 6px;
-    color: #3e3e3e;
+    color: #555555;
     font-size: 0.65em;
     margin-left: -90px;
-    margin-top: -23px;
+    margin-top: -30px;
     opacity: 0%;
-    padding: 3px 0;
+    padding: 0.5em 1em;
     position: absolute;
     text-align: center;
-    transition: opacity 0.5s;
+    transition: opacity 0.7s;
     width: 180px;
     z-index: 1;
 
 }
 
 .tooltip .tooltiptext::after {
-    border-color: #ededed transparent transparent transparent;
+    border-color: #e8d5ff transparent transparent transparent;
     border-style: solid;
     border-width: 5px;
     content: "";
