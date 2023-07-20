@@ -17,7 +17,7 @@ function addToUserList(init, replW, htmlEl) {
   let lines = [];
 
   for (let i = 0; i < init.length; i++) {
-    let str = `<strike><i><font color="#e8d5ff">${init[i]}</font></i></strike> ⟶ <b>${replW[i]}</b> <button name="Remove this pair" class="remove">×</button>`;
+    let str = `<strike><i><font color="#e8d5ff">${init[i]}</font></i></strike> → <b>${replW[i]}</b> <button name="Remove this pair" class="remove">×</button>`;
     lines.push(str);
   }
 
@@ -66,8 +66,8 @@ setTimeout(() => {
       alreadyExists.style.opacity = '0%';
       tooLong.style.opacity = '0%';
       inReplacements.style.opacity = '0';
-    } else if (replaceInput.length > 20) {
-      // if > 20 chars
+    } else if (replaceInput.length > 30) {
+      // if > 30 chars
       tooLong.style.opacity = '85%';
       empty.style.opacity = '0%';
       alreadyExists.style.opacity = '0%';

@@ -9,17 +9,17 @@ html {
 }
 
 body {
-    background-color: #788cee;
+    background-color: #2e3d84;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.35em;
+    font-size: 1.2rem;
     padding: 10px;
     text-align: center;
-    width: 250px;
+    width: 290px;
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2.7em;
     margin-bottom: 15px;
     margin-top: 15px;
 }
@@ -98,7 +98,7 @@ h1 {
 #with {
     border-radius: 5px;
     border: black solid 0px;
-    box-shadow: 0px 0px 120px 2px #e8d5ff;
+    box-shadow: 0px 0px 120px 3px #e8d5ff;
     display: block;
     margin-bottom: 12px;
     margin-left: auto;
