@@ -4,6 +4,9 @@ let initial, replaceWith;
 // Synchronize the initial and replaceWith arrays in Chrome storage
 function wordsSync() {
   chrome.storage.sync.set({ initial, replaceWith });
+  initial.length < 1
+    ? (document.getElementById('delete-all').style.display = 'none')
+    : null;
 }
 
 // Add user-defined word pairs to the HTML element
@@ -49,7 +52,9 @@ function delay(ms) {
     const tooLong = document.querySelector('#too-long');
     const partOfReplacement = document.querySelector('#part-of-replacement');
     const inReplacements = document.querySelector('#in-replacements');
+    const sameSame = document.querySelector('#same-same');
 
+    sameSame;
     // Input validation
 
     let currentPopUp;
@@ -58,6 +63,8 @@ function delay(ms) {
       currentPopUp = alreadyExists.style;
     } else if (replaceInput === '') {
       currentPopUp = empty.style;
+    } else if (replaceInput === withInput) {
+      currentPopUp = sameSame.style;
     } else if (replaceInput.length > 30) {
       currentPopUp = tooLong.style;
     } else if (replaceWith.includes(replaceInput)) {
@@ -76,11 +83,11 @@ function delay(ms) {
 
     currentPopUp &&
       ((currentPopUp.opacity = '0.85'),
-      setTimeout(() => (currentPopUp.opacity = '0'), 3000));
+      setTimeout(() => (currentPopUp.opacity = '0'), 4000));
   });
 
   await delay(500);
-  document.querySelector('#clear-all').addEventListener('click', () => {
+  document.querySelector('#delete-all').addEventListener('click', () => {
     if (confirm('Do you want to delete all entries?')) {
       document.getElementById('pair').innerHTML = '';
       chrome.storage.sync.clear();

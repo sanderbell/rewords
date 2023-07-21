@@ -11,33 +11,35 @@
       rel="stylesheet"
     />
   </head>
+  <script deter src="popup.js"></script>
   <body>
     <h1><i>Re</i><span id="words">words</span></h1>
-    <p id="cta">Add some words:</p>
+    <p id="cta">Add some words</p>
     <section id="pair"></section>
     <section id="addition">
       <section class="tooltip">
         <span class="tooltiptext" id="already-exists"
-          >😬 Already added this before
+          >Already added this before
         </span>
       </section>
       <section class="tooltip">
-        <span class="tooltiptext" id="too-long">
-          🤏🏻 30 chars max, please</span
-        >
+        <span class="tooltiptext" id="too-long">30 chars max, please</span>
       </section>
       <section class="tooltip">
-        <span class="tooltiptext" id="empty">😶‍🌫️ Put something here</span>
+        <span class="tooltiptext" id="empty">Put something here</span>
       </section>
       <section class="tooltip">
         <span class="tooltiptext" id="in-replacements">
-          👀 One of your replacements!</span
+          One of your replacements!</span
         >
       </section>
       <section class="tooltip">
         <span class="tooltiptext" id="part-of-replacement">
-          😵‍💫 Part of a replacement. Things can get messy!</span
+          Part of a replacement!</span
         >
+      </section>
+      <section class="tooltip">
+        <span class="tooltiptext" id="same-same"> This makes no sense</span>
       </section>
       <form id="the-form">
         <input
@@ -58,7 +60,7 @@
         <button type="submit" id="add">Add</button>
       </form>
     </section>
-    <button id="clear-all">Delete all</button>
-    <script src="popup.js"></script>
+    <button id="delete-all">Delete all</button>
+
   </body>
 </html>

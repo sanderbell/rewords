@@ -6,22 +6,24 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    user-select: none;
 }
 
 body {
     background-color: #2e3d84;
     color: #fff;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.32rem;
     padding: 10px;
     text-align: center;
-    width: 290px;
+    width: 280px;
+    user-select: none;
+
 }
 
 h1 {
-    font-size: 2.7em;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    font-size: 2.8em;
+    margin: 15px 0;
     user-select: none;
 }
 
@@ -30,21 +32,22 @@ h1 {
 }
 
 #pair {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 #cta {
     font-size: 0.8em;
+    font-family: sans-serif;
     opacity: 0.4;
     color: #e8d5ff;
-    user-select: none;
+
 }
 
 .remove {
     background: none;
     border: none;
     color: #e8d5ff;
-    font-size: 1.05em;
+    font-size: 1.2em;
     opacity: 0.4;
     padding: 3px;
     transition: all 0.6s;
@@ -53,7 +56,7 @@ h1 {
 .remove:hover {
     cursor: pointer;
     opacity: 1;
-    transform: rotate(-180deg) scale(1.04);
+    transform: rotate(-220deg);
 }
 
 .tooltip {
@@ -66,8 +69,8 @@ h1 {
 #empty,
 #too-long,
 #in-replacements,
-#part-of-replacement {
-    /* TODO: Tooltip width must depent on text lenght */
+#part-of-replacement,
+#same-same {
     background-color: #e8d5ff;
     border-radius: 6px;
     color: #555555;
@@ -123,10 +126,9 @@ h1 {
     border-radius: 5px;
     border: none;
     color: #4f4f4f;
-    margin: 6px;
-    padding: 6px;
+    margin: 16px 0 25px 0;
+    padding: 8px;
     transition: all 0.4s;
-    user-select: none;
 
 }
 
@@ -134,19 +136,46 @@ h1 {
     transform: scale(1.06);
 }
 
-#clear-all {
+#delete-all {
+    background-color: #cacacaaf;
     background: none;
     border: none;
     color: #e8d5ff;
     font-size: 0.7em;
-    margin-top: 10px;
+    margin: 10px 0;
     opacity: 0.4;
     transition: all 0.2s;
-    user-select: none;
 
 }
 
-#clear-all:hover {
+#delete-all:hover {
     opacity: 0.7;
     transform: scale(1.03);
 }
+
+
+/* Maaaaaaaybe there'll be a footer */
+
+/* a {
+    border-bottom: 0.1em solid #fff;
+    color: #fff;
+    opacity: 0.85;
+    text-decoration: none;
+    transform: scale(1.03);
+} */
+
+/* a:hover {
+    opacity: 1;
+}
+
+footer {
+    border-radius: 0.3em;
+    bottom: 1em;
+    font-size: 0.7rem;
+    left: 50%;
+    opacity: 0.3;
+    padding: 0.2em 0.4em;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+} */
