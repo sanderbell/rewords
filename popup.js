@@ -44,51 +44,27 @@ function delay(ms) {
     e.preventDefault();
     const replaceInput = document.querySelector('#replace').value.trim();
     const withInput = document.querySelector('#with').value.trim();
-
     const alreadyExists = document.querySelector('#already-exists');
     const empty = document.querySelector('#empty');
     const tooLong = document.querySelector('#too-long');
     const partOfReplacement = document.querySelector('#part-of-replacement');
     const inReplacements = document.querySelector('#in-replacements');
 
+    // Input validation
     if (initial.includes(replaceInput)) {
       alreadyExists.style.opacity = '0.85';
-      empty.style.opacity = '0';
-      tooLong.style.opacity = '0';
-      inReplacements.style.opacity = '0';
-      partOfReplacement.style.opacity = '0';
     } else if (replaceInput === '') {
       empty.style.opacity = '0.85';
-      alreadyExists.style.opacity = '0';
-      tooLong.style.opacity = '0';
-      inReplacements.style.opacity = '0';
-      partOfReplacement.style.opacity = '0';
     } else if (replaceInput.length > 30) {
       tooLong.style.opacity = '0.85';
-      empty.style.opacity = '0';
-      alreadyExists.style.opacity = '0';
-      inReplacements.style.opacity = '0';
-      partOfReplacement.style.opacity = '0';
     } else if (replaceWith.includes(replaceInput)) {
       inReplacements.style.opacity = '0.85';
-      tooLong.style.opacity = '0';
-      empty.style.opacity = '0';
-      alreadyExists.style.opacity = '0';
-      partOfReplacement.style.opacity = '0';
     } else if (replaceWith.some((word) => word.includes(replaceInput))) {
       console.log('partOfReplacement');
-      inReplacements.style.opacity = '0';
-      tooLong.style.opacity = '0';
-      empty.style.opacity = '0';
-      alreadyExists.style.opacity = '0';
       partOfReplacement.style.opacity = '0.85';
     } else {
       initial.push(replaceInput);
       replaceWith.push(withInput);
-      alreadyExists.style.opacity = '0';
-      empty.style.opacity = '0';
-      tooLong.style.opacity = '0';
-      inReplacements.style.opacity = '0';
       document.querySelector('#replace').value = '';
       document.querySelector('#with').value = '';
       addToUserList(initial, replaceWith, 'pair');
