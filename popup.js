@@ -51,17 +51,19 @@ function delay(ms) {
     const inReplacements = document.querySelector('#in-replacements');
 
     // Input validation
+
+    let currentPopUp;
+
     if (initial.includes(replaceInput)) {
-      alreadyExists.style.opacity = '0.85';
+      currentPopUp = alreadyExists.style;
     } else if (replaceInput === '') {
-      empty.style.opacity = '0.85';
+      currentPopUp = empty.style;
     } else if (replaceInput.length > 30) {
-      tooLong.style.opacity = '0.85';
+      currentPopUp = tooLong.style;
     } else if (replaceWith.includes(replaceInput)) {
-      inReplacements.style.opacity = '0.85';
+      currentPopUp = inReplacements.style;
     } else if (replaceWith.some((word) => word.includes(replaceInput))) {
-      console.log('partOfReplacement');
-      partOfReplacement.style.opacity = '0.85';
+      currentPopUp = partOfReplacement.style;
     } else {
       initial.push(replaceInput);
       replaceWith.push(withInput);
@@ -71,6 +73,10 @@ function delay(ms) {
       wordsSync();
       location.reload();
     }
+
+    currentPopUp &&
+      ((currentPopUp.opacity = '0.85'),
+      setTimeout(() => (currentPopUp.opacity = '0'), 3000));
   });
 
   await delay(500);
