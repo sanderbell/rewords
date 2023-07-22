@@ -4,7 +4,7 @@ let initial, replaceWith;
 // Synchronize the initial and replaceWith arrays in Chrome storage
 function wordsSync() {
   chrome.storage.sync.set({ initial, replaceWith });
-  initial.length < 1
+  initial.length < 2
     ? (document.getElementById('delete-all').style.display = 'none')
     : null;
 }
