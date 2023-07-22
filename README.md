@@ -30,7 +30,7 @@ The extension provides a user-friendly options page where you can easily add, ed
 
 Your word pairs are automatically synchronized across devices using Chrome storage. This means that your customized word replacements will be available whenever you sign in to Chrome from any device.
 
-## How to Use
+## Usage
 
 1. Click on the *Re*words icon in the Chrome toolbar to open the extension popup.
 
@@ -48,7 +48,7 @@ Your word pairs are automatically synchronized across devices using Chrome stora
 
 ## Installation
 
-1. Clone or download this repository to your local machine.
+1. Clone or [download](https://github.com/sanderbell/rewords/archive/refs/heads/master.zip) this repository to your local machine.
 
 2. Open Google Chrome and navigate to `chrome://extensions/`.
 
@@ -60,12 +60,8 @@ Your word pairs are automatically synchronized across devices using Chrome stora
 
 ## Contributions and Bug Reporting
 
-We welcome contributions to this project! If you find any bugs or have ideas for improvements, please submit an issue on the [GitHub repository](https://github.com/sanderbell/rewords) or feel free to create a pull request.
+I welcome contributions to this project! If you find any bugs or have ideas for improvements, please submit an issue on the [GitHub repository](https://github.com/sanderbell/rewords) or feel free to create a pull request.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
-
----
-
-Thank you for using *Re*words! We hope this extension makes your browsing experience funnier. If you have any questions or feedback, please don't hesitate to contact us. Happy browsing!
