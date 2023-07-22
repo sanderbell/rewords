@@ -1,4 +1,4 @@
-# Rewords
+# Rewords — Text Replacer
 
 ## Overview
 
