@@ -1,8 +1,8 @@
-## Privacy Policy for Rewords - Text Replacer
+## Privacy Policy for Rewords — Text Replacer
 
 ### Introduction
 
-This Privacy Policy outlines the data collection, usage, and management practices for the Rewords - Text Replacer Chrome extension. By using Rewords, you agree to the collection and use of information in accordance with this policy.
+This Privacy Policy outlines the data collection, usage, and management practices for the Rewords — Text Replacer Chrome extension. By using Rewords, you agree to the collection and use of information in accordance with this policy.
 
 ### Information Collection and Use
 
